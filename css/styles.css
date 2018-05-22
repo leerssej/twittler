@@ -1,4 +1,30 @@
+.tweet {
+  padding: 5px;
+}
 
+.username {
+  color: navy;
+  font-family: Garamond;
+  font-style: italic;
+}
+.username:hover {
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.msg {
+  font-family: Modern;
+}
+.idx {
+  font-family: Georgia;
+  font-size: 8pt;
+}
+.timestamp {
+  font-family: Monospace;
+  font-size: 8pt;
+  color: rgb(68, 181, 209);
+  margin-left: 10px;
+}
 
 @media (min-width: 0px) {
   .container {
@@ -15,6 +41,7 @@
   #tweet-log {
       width: 100%;
       border: 1px solid #1e90ff;
+      font: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   .padded-top {
       padding-top: 8px;
@@ -30,37 +57,24 @@
       color: #fff;
       background-color: dodgerblue;
   } 
-  /* .username {
-  
-}
-.msg {
-  
-}
-.idx {
-  
-}
-.timestamp {
-  
-} */
 } 
 
 @media (min-width: 400px) {
   
 } 
 
-@edia (min-width:  600p) {
+@media (min-width:  600p) {
  
 } 
 
 @media (min-width: 768px){
-  .cotainer {
+  .container {
         width: 750px;
-x;
  }
 } 
 
 @media (m (mwidth: 992px){
- .container {
+  .container {
    
     width: 970px;
         }
@@ -72,5 +86,5 @@ x;
     }
     #tweetlog {
         width: 4    } */
-}
+  }
 }

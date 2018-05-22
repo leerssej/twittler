@@ -6,14 +6,15 @@ $(document).ready(function(){
   let index = streams.home.length - 1;
   while(index >= 0){
     let tweet = streams.home[index];
-    let $tweet = $('<div>' +
-      '<a class="username"></a>' +
-      '<a class="msg"></a>' +
-      '<a class="idx"></a>' +
-      '<a class="timestamp"></a>' +
+    let $tweet = $(
+    '<div class="tweet">' +
+      '<div class="username"></div>' +
+      '<span class="msg"></span>' +
+      '<span class="idx"></span>' +
+      '<div class="timestamp"></div>' +
     '</div>');
-    $tweet.children('.username').text(`@${tweet.user} `);
-    $tweet.children('.msg').text(`: ${tweet.message} `);
+    $tweet.children('.username').text(`@${tweet.user}:`);
+    $tweet.children('.msg').text(`${tweet.message} `);
     $tweet.children('.idx').text(`(${index + 1}) `);
     $tweet.children('.timestamp').text(`- (${tweet.created_at})`);
     $tweet.prependTo($tweetlog);
@@ -25,8 +26,19 @@ $(document).ready(function(){
     lastIndexLoaded = streams.home.length; // this is preemptive for when loop is finished
     while(indexToLoad < lastIndexLoaded) {
       let tweet = streams.home[indexToLoad];
-      let $tweet = $('<div></div>');
-      $tweet.text(`@ ${tweet.user}: ${tweet.message} - ${tweet.created_at}`);
+      let $tweet = $(
+      '<div class="tweet">' +
+        '<div class="username"></div>' +
+        '<span class="msg"></span>' +
+        '<span class="idx"></span>' +
+        '<div class="timestamp"></div>' +
+      '</div>');
+      $tweet.children('.username').text(`@${tweet.user}:`);
+      $tweet.children('.msg').text(`${tweet.message} `);
+      $tweet.children('.idx').text(`(${index + 1}) `);
+      $tweet.children('.timestamp').text(`- (${tweet.created_at})`);
+        // let $tweet = $('<div></div>');
+      // $tweet.text(`@ ${tweet.user}: ${tweet.message} - ${tweet.created_at}`);
       $tweet.prependTo($tweetlog);
       indexToLoad += 1;
     }
