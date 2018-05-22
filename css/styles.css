@@ -1,5 +1,6 @@
 
 @media (min-width: 0px) {
+
   .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -14,7 +15,7 @@
   #tweet-log {
       width: 100%;
       border: 1px solid #1e90ff;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   .padded-top {
       padding-top: 8px;
@@ -30,16 +31,29 @@
       color: #fff;
       background-color: dodgerblue;
   }
+  .buttonContainer button:focus {
+      outline: none;
+  }
 
   /*Tweets Styling */
   .tweet {
     padding: 5px;
+    border-bottom: 1px solid #222;
   }
-  
+  /* .tweet:nth-child(odd) .description {
+      background-color: ;
+  } */
+  .tweet:nth-child(even) {
+      background-color: #f1f1f1;
+  }
+  .tweet .msg {
+      color: rgb(119, 119, 119);
+  }
   .username {
     color: navy;
-    font-family: 'Open Sans', Helvetica, sans-serif; 
+    /* font-family: Garamond; */
     font-style: italic;
+    font-size: 1.5rem
   }
   .username:hover {
     color: dodgerblue;
@@ -48,16 +62,23 @@
   
   .msg {
     /* font-family: Modern; */
+    margin-left: 3%;
   }
   .idx {
-    font-family: Georgia;
-    font-size: 8pt;
+    
   }
   .timestamp {
-    font-family: Monospace;
-    font-size: 8pt;
-    color: rgb(68, 181, 209);
-    margin-left: 10px;
+    font-size: .7em;
+    color: #000;
+    margin-left: 3%;
+  }
+
+  /*Button Styles */
+  .off {
+      display: none !important;
+  }
+  .on {
+      display: block;
   }
 } 
 
@@ -75,7 +96,7 @@
  }
 } 
 
-@media (m (mwidth: 992px){
+@media (min-width: 992px){
   .container {
    
     width: 970px;
@@ -83,10 +104,5 @@
     .padded-top {
         padding-top: 16px;
     }
-    /* #sidebar {
-        width: 48%;
-    }
-    #tweetlog {
-        width: 4    } */
-  }
+    
 }
