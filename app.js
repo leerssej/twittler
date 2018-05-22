@@ -1,15 +1,21 @@
 $(document).ready(function(){
   const $tweetlog = $('#tweet-log');
-  // $body.html('');
   let lastIndexLoaded = 11; // accounting for the first ten always getting loaded
 
   console.log(streams.home.length);
   let index = streams.home.length - 1;
-  console.log(index);
   while(index >= 0){
     let tweet = streams.home[index];
-    let $tweet = $('<div></div>');
-    $tweet.text(`@ ${tweet.user}: ${tweet.message} - ${tweet.created_at}`);
+    let $tweet = $('<div>' +
+      '<a class="username"></a>' +
+      '<a class="msg"></a>' +
+      '<a class="idx"></a>' +
+      '<a class="timestamp"></a>' +
+    '</div>');
+    $tweet.children('.username').text(`@${tweet.user} `);
+    $tweet.children('.msg').text(`: ${tweet.message} `);
+    $tweet.children('.idx').text(`(${index + 1}) `);
+    $tweet.children('.timestamp').text(`- (${tweet.created_at})`);
     $tweet.prependTo($tweetlog);
     index -= 1;
   }

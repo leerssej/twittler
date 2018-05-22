@@ -1,13 +1,76 @@
 
 
 @media (min-width: 0px) {
-
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #sidebar {
+      width: 100%;
+      min-height: 100px;
+      border: 1px solid #f1f1f1;
+  }
+  #tweet-log {
+      width: 100%;
+      border: 1px solid #1e90ff;
+  }
+  .padded-top {
+      padding-top: 8px;
+  }
+  .buttonContainer button {
+      display: inline-block;
+      padding: 8px 12px;
+      font-size: 1rem;
+      border-radius: 3px;
+      vertical-align: middle;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+      background-color: dodgerblue;
+  } 
+  /* .username {
+  
+}
+.msg {
+  
+}
+.idx {
+  
+}
+.timestamp {
+  
+} */
 } 
 
 @media (min-width: 400px) {
-	
+  
 } 
 
-@media (min-width: 600px) {
-	
+@edia (min-width:  600p) {
+ 
 } 
+
+@media (min-width: 768px){
+  .cotainer {
+        width: 750px;
+x;
+ }
+} 
+
+@media (m (mwidth: 992px){
+ .container {
+   
+    width: 970px;
+        }
+    .padded-top {
+        padding-top: 16px;
+    }
+    /* #sidebar {
+        width: 48%;
+    }
+    #tweetlog {
+        width: 4    } */
+}
+}
