@@ -14,24 +14,20 @@ $(document).ready(function(){
     index -= 1;
   }
 
-const updateTweets = function() {
-  let indexToLoad = lastIndexLoaded;
-  lastIndexLoaded = streams.home.length; // this is preemptive for when loop is finished
-  while(indexToLoad < lastIndexLoaded) {
-console.log('lastIndexLoaded:', lastIndexLoaded);
-console.log('lastIndexLoaded:', lastIndexLoaded);
-    let tweet = streams.home[indexToLoad];
-    let $tweet = $('<div></div>');
-    $tweet.text(`@ ${tweet.user}: ${tweet.message} - ${tweet.created_at}`);
-    $tweet.prependTo($tweetlog);
-    indexToLoad += 1;
+  const updateTweets = function() {
+    let indexToLoad = lastIndexLoaded;
+    lastIndexLoaded = streams.home.length; // this is preemptive for when loop is finished
+    while(indexToLoad < lastIndexLoaded) {
+      let tweet = streams.home[indexToLoad];
+      let $tweet = $('<div></div>');
+      $tweet.text(`@ ${tweet.user}: ${tweet.message} - ${tweet.created_at}`);
+      $tweet.prependTo($tweetlog);
+      indexToLoad += 1;
+    }
   }
-}
 
-// on button click
-  $('.buttonContainer button').click(function() {
-    //alert('clicked');
-    console.log(streams.home.length);
+  // on button click
+  $('#displayNewBtn').click(function() {
     updateTweets();
   });
 
