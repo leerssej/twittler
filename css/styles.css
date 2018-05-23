@@ -49,13 +49,18 @@
   .tweet .msg {
       color: rgb(119, 119, 119);
   }
-  .username {
+  .userlink {
     color: navy;
     /* font-family: Garamond; */
     font-style: italic;
     font-size: 1.5rem
   }
-  .username:hover {
+  /*
+   .username:hover {
+    color: dodgerblue;
+    cursor: pointer;
+  } */
+  .userlink:hover {
     color: dodgerblue;
     cursor: pointer;
   }
