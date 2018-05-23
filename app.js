@@ -20,7 +20,16 @@ const writeTweets = tweetStream => {
 $(document).ready(() => {
   // load tweets on refresh/startup
   writeTweets(streams.home);
-  
+
   // load tweets on displayNew Button click
   $('#updateAllBtn').click(() => writeTweets(streams.home));
+
+  // $(document).on("click", ".tweet .username", function (e) {
+  //   clearInterval(intervalName);
+  //   displayTweetsList(updateTweets(streams, e.target.innerText));
+  //   intervalName = setInterval(function () {
+  //     displayTweetsList(updateTweets(streams, e.target.innerText));
+  //   }, 1000);
+  // });
+
 });
