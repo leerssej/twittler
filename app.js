@@ -24,12 +24,4 @@ $(document).ready(() => {
   // load tweets on displayNew Button click
   $('#updateAllBtn').click(() => writeTweets(streams.home));
 
-  // $(document).on("click", ".tweet .username", function (e) {
-  //   clearInterval(intervalName);
-  //   displayTweetsList(updateTweets(streams, e.target.innerText));
-  //   intervalName = setInterval(function () {
-  //     displayTweetsList(updateTweets(streams, e.target.innerText));
-  //   }, 1000);
-  // });
-
 });
