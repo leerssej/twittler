@@ -10,7 +10,10 @@ const writeTweets = tweetStream => {
   tweetStream.forEach((tweet, i) => {
     $(`<div class="tweet">
         <div class="username">
-          <a class = "userlink" href='javascript:writeTweets(streams.users.${tweet.user})'>@${tweet.user}:</a>
+            <a class = "userlink" href='javascript:writeTweets(streams.users.${tweet.user})'>@${tweet.user}:</a>
+          <div class="images">
+            <img src="images/${tweet.user}.jpg">
+          </div>
         </div>
         <span class="msg">${tweet.message} </span>
         <span class="idx">(${i + 1}) </span>
@@ -34,24 +37,44 @@ $(document).ready(() => {
   // load tweets on displayNew Button click
   $('#updateAllBtn').click(() => writeTweets(streams.home));
   
-// hide user input form field on load
+  // set helper variables
   const $formContainer = $('.form-container');
   const $addTwittle = $('#addTwittBtn');
+  const $formInputField = $('.user-input');
+  let formInputText = $('.user-input').attr('value');
+  const $formSubmitBtn = $('twitt-add');
+
+  
+  // hide user input form field on load
   $('.form-container').hide();
   $('span.cancel-text').addClass('off');
+  
+  // check to see if open? show formfield 
   $addTwittle.click(function() {
-    $(this).addClass('open');
-    $formContainer.slideDown(500, function(){
-      $('span.add-text').addClass('off');
-      $('span.cancel-text').removeClass('off');
-    });
+    if ( !$(this).hasClass('open') ) {
+      $(this).addClass('open');
+      $formContainer.slideDown(500, function(){
+        $('span.add-text').addClass('off');
+        $('span.cancel-text').removeClass('off');
+      });
+    } else {
+      $formContainer.slideUp(500, function(){
+        $addTwittle.removeClass('open');
+        $('span.add-text').removeClass('off');
+        $('span.cancel-text').addClass('off');
+      });
+    }
   });
-  $('#addTwittBtn.open').click(function() {
-    $formContainer.slideUp(500, function(){
-      $('span.add-text').removeClass('off');
-      $('span.cancel-text').addClass('off');
-    });
-  });
+
+  /*Form Input Submit Functionality */
+
+
+  // $('#addTwittBtn.open').click(function() {
+  //   $formContainer.slideUp(500, function(){
+  //     $('span.add-text').removeClass('off');
+  //     $('span.cancel-text').addClass('off');
+  //   });
+  // });
 
 
 
