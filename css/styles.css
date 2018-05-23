@@ -14,8 +14,10 @@
   }
   #tweet-log {
       width: 100%;
+      height: 780px;
       border: 1px solid #1e90ff;
       font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      overflow-y: scroll;
   }
   .padded-top {
       padding-top: 8px;
