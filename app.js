@@ -41,7 +41,6 @@ $(document).ready(() => {
   const $formContainer = $('.form-container');
   const $addTwittle = $('#addTwittBtn');
   const $formInputField = $('.user-input');
-  let formInputText = $('.user-input').attr('value');
   const $formSubmitBtn = $('twitt-add');
 
   
@@ -67,7 +66,26 @@ $(document).ready(() => {
   });
 
   /*Form Input Submit Functionality */
+  $('#twittler-form').submit(function(e) {
+    e.preventDefault();
+    //Set Form Input Value VAR
+    let formInputText = $('#userInput').val()//attr('value');
+    //alert(formInputText);
 
+    //pass form input text to generateCustomTwitt() function
+    generateCustomTwitt(formInputText);
+
+  });
+
+
+  // $formSubmitBtn.click(function(e) {
+  //   // let myMsg = $('.user-input')
+  //   e.preventDefault()
+  //   //get form input value
+  //   let formInputText = $('#userInput').val()//attr('value');
+  //   alert(formInputText)
+  //   console.log(formInputText);
+  // });
 
   // $('#addTwittBtn.open').click(function() {
   //   $formContainer.slideUp(500, function(){

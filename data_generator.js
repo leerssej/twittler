@@ -11,6 +11,7 @@ streams.users.shawndrost = [];
 streams.users.sharksforcheap = [];
 streams.users.mracus = [];
 streams.users.douglascalhoun = [];
+// streams.users.adminUser = [];
 window.users = Object.keys(streams.users);
 
 // utility function for adding tweets to our data structures
@@ -45,6 +46,15 @@ var generateRandomTweet = function(){
   tweet.created_at = new Date();
   addTweet(tweet);
 };
+
+//ADDED By VNeilly on 5/23
+const generateCustomTwitt = function(inputText) {
+  var tweet = {};
+  tweet.user = 'adminUser';
+  tweet.message = inputText;
+  tweet.created_at = new Date();
+  streams.home.push(tweet);
+}
 
 for(var i = 0; i < 10; i++){
   generateRandomTweet();
