@@ -39,12 +39,9 @@
 
   /*Tweets Styling */
   .tweet {
-    padding: 5px;
+    padding: 10px 20px;
     border-bottom: 1px solid #222;
   }
-  /* .tweet:nth-child(odd) .description {
-      background-color: ;
-  } */
   .tweet:nth-child(even) {
       background-color: #f1f1f1;
   }
@@ -53,22 +50,18 @@
   }
   .userlink {
     color: navy;
-    /* font-family: Garamond; */
     font-style: italic;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    text-decoration: none;
+
   }
-  /*
-   .username:hover {
-    color: dodgerblue;
-    cursor: pointer;
-  } */
   .userlink:hover {
     color: dodgerblue;
     cursor: pointer;
+    text-decoration: underline;
   }
   
   .msg {
-    /* font-family: Modern; */
     margin-left: 3%;
   }
   .idx {
@@ -87,6 +80,10 @@
   .on {
       display: block;
   }
+
+  /*FORM STYLES */
+
+  
 } 
 
 @media (min-width: 400px) {
