@@ -32,7 +32,7 @@
       height: 780px;
       border: 1px solid #1e90ff;
       border-radius: 3px;
-      margin: 10px;
+      margin-top: 10px;
       font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
       overflow-y: scroll;
       
@@ -54,7 +54,7 @@
   
   /*Tweets Styling */
   .tweet {
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-bottom: 1px solid #222;
   }
   .tweet:nth-child(even) {
@@ -77,15 +77,16 @@
   }
   
   .msg {
-    margin-left: 3%;
+    margin-left: 15px;
   }
   .idx {
     
   }
-  .timestamp {
+  .elapsedTime {
     font-size: .7em;
     color: #000;
-    margin-left: 3%;
+    padding-top: 2px;
+    margin-left: 65px;
   }
 
   /*Button Styles */
@@ -163,13 +164,10 @@
 } 
 
 @media (min-width: 768px){
-  .container {
-    width: 750px;
-    border-left: 80px;
- }
+
 } 
 
-/*@media (min-width: 992px){
+@media (min-width: 992px){
   .container {
    
     width: 970px;
@@ -178,4 +176,4 @@
         padding-top: 16px;
     }
     
-}*/
+}
