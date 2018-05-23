@@ -70,30 +70,23 @@ $(document).ready(() => {
     e.preventDefault();
     //Set Form Input Value VAR
     let formInputText = $('#userInput').val()//attr('value');
-    //alert(formInputText);
 
-    //pass form input text to generateCustomTwitt() function
-    generateCustomTwitt(formInputText);
+    if ( formInputText === '') {
+      alert('Ooops! Please enter your message!')
+    } else {
+      //pass form input text to generateCustomTwitt() function
+      generateCustomTwitt(formInputText);
+      writeTweets(streams.home);
 
+      // clear form input after submit
+      $('#userInput').val('');
+
+      //Close Form Again --- Yes I know this needs to be a helper function =)
+      $formContainer.slideUp(500, function(){
+          $addTwittle.removeClass('open');
+            $('span.add-text').removeClass('off');
+            $('span.cancel-text').addClass('off');
+        });
+    }//end else condition
   });
-
-
-  // $formSubmitBtn.click(function(e) {
-  //   // let myMsg = $('.user-input')
-  //   e.preventDefault()
-  //   //get form input value
-  //   let formInputText = $('#userInput').val()//attr('value');
-  //   alert(formInputText)
-  //   console.log(formInputText);
-  // });
-
-  // $('#addTwittBtn.open').click(function() {
-  //   $formContainer.slideUp(500, function(){
-  //     $('span.add-text').removeClass('off');
-  //     $('span.cancel-text').addClass('off');
-  //   });
-  // });
-
-
-
 });
