@@ -1,9 +1,6 @@
 // helper functions
 const simplifyTimeStamp = timestamp => String(timestamp).split(' ').slice(0,5).join(' ');
 
-const elapsedTime = timestamp => new Date() - Date(timestamp).getTime();
-// console.log(elapsedTime('11 13 2018'));
-
 const writeTweets = tweetStream => {
   const $tweetlog = $('#tweet-log');
   $tweetlog.html('');
@@ -20,7 +17,6 @@ const writeTweets = tweetStream => {
         <div class="elapsedTime">${elapsedTime(tweet.created_at)} seconds ago </div>
       </div>
     `).prependTo($tweetlog);
-    // console.log(tweet.created_at);
   });
 }
         // <span class="idx">(${i + 1}) </span>
